@@ -45,7 +45,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     0--------50------100
     <form>
-        <input type="checkbox" name="" id="">Español
+        <input type="checkbox" name="" id="box1">Español
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="range">
     </form>
@@ -54,7 +54,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     0--------50------100
     <form>
-        <input type="checkbox" name="" id="">Ingles
+        <input type="checkbox" name="" id="box2">Ingles
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="range">
     </form>
@@ -63,7 +63,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     0--------50------100
     <form>
-        <input type="checkbox" name="" id="">Frances
+        <input type="checkbox" name="" id="box3">Frances
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="range">
     </form>
@@ -72,16 +72,56 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         0--------50------100
     <form>
-        <input type="checkbox" name="" id="">Chino
+        <input type="checkbox" name="" id="box4">Chino
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="range">
     </form>
     <p> </p>
     <form>
-        <input type="submit" name="" id="" value="&nbsp;Enviar&nbsp;"
+        <input type="submit" onClick="mostrarDatos()" name="" id="" value="&nbsp;Enviar&nbsp;"
         style="background-color: rgb(59, 169, 237); color: white; border-radius: 30%;">
-        <input type="submit" name="" id="" value="&nbsp;Borrar&nbsp;" 
+        <input type="reset" name="" id="" value="&nbsp;Borrar&nbsp;" 
         style="background-color: rgb(59, 169, 237); color: white; border-radius: 30%;">
     </form>
+
+    <script>
+        // declaramos la función JS
+        function mostrarDatos(){
+            vnombre = document.getElementById("nombre").value;
+            vapellido = document.getElementById("apellido").value;
+            vdni = document.getElementById("dni").value;
+            vnacimiento = document.getElementById("nacimiento").value;
+            vdomicilio = document.getElementById("domicilio").value;
+            vlocalidad = document.getElementById("localidad").value;
+        //         Guarda valor de checkbox               /
+            //----------------------------/    
+        // no se ha procesado los checkbox elegidos. Solo mostramos los valores de los inputs /
+            vbox1 = document.getElementById("box1").value;
+            vbox2 = document.getElementById("box2").value;
+            vbox3 = document.getElementById("box3").value;
+            vbox4 = document.getElementById("box4").value;
+                 // ver programa ejemplo-js-checkbox.html 	
+            //-----------------------------------------------------/
+        //           Imprime los datos cargados                /
+            //-----------------------------------------------------/
+            document.write("</h3>Mostramos los datos</h3>");
+        document.write("Apellido: "+vapellido+"<br/>");
+        document.write("Nombre: "+vnombre+"<br/>");
+        document.write("DNI: "+vdni+"<br/>");
+        document.write("Fecha de nacimiento: "+vnacimiento+"<br/>");
+        document.write("Domicilio: "+vdomicilio+"<br/>");
+        document.write("Localidad: "+vlocalidad+"<br/>");
+                //* radiobutton elegido 
+            document.write("<p>---------------------</p>");
+                //* CheckBox elegidos
+        document.write("Español: "+vbox1+"<br/>");
+        document.write("Ingles: "+vbox2+"<br/>");
+        document.write("Frances: "+vbox3+"<br/>");
+        document.write("Chino: "+vbox4+"<br/>");
+            //------------------------------
+            document.write("<br/><strong>Gracias por sus datos</strong>");
+        }
+    </script>
+        <!--https://validator.w3.org/ -->
 </body>
 </html>
